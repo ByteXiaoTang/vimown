@@ -48,9 +48,9 @@ set sidescroll=10        " 设置向右滚动字符数
 "tmz 2019/12/26
 "set nofoldenable         " 禁用折叠代码
 set foldenable
-set foldmethod=syntax 
+set foldmethod=syntax
 set foldlevel=100
-set foldcolumn=4  
+set foldcolumn=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码补全
@@ -90,6 +90,11 @@ set mouse=a
 "?禁止光标闪烁
 set gcr=a:block-blinkon0
 set history=100
+
+"空格
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+nnoremap <leader><space> :%s/\s*$//g <cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gvim/macvim设置
@@ -240,7 +245,7 @@ if version >= 800
     " noremap <leader>d :PreviewScroll +1<cr> "  往下滚动预览窗口
 endif
 
-call plug#end()  
+call plug#end()
 
 " load vim default plugin
 runtime macros/matchit.vim
@@ -307,8 +312,8 @@ let g:airline_symbols.branch = '⎇'
 
 " 是否打开tabline
 "打开后，tabline和tmuxline都可以得到增强
-"let g:airline#extensions#tabline#enabled = 1 
-let g:airline#enabled = 1 
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#enabled = 1
 
 " " airline
 " let g:airline_theme="onedark"
@@ -349,7 +354,7 @@ let g:airline#enabled = 1
 "
 "
 
-nmap <F6> ms:call TitleDet() <cr>'s 
+nmap <F6> ms:call TitleDet() <cr>'s
 "在文件中按F6调用
 function AddTitle()
     call append (0,"/*********************************************************************")
@@ -400,13 +405,13 @@ nnoremap <silent> <c-n> :NextBuffer<cr>
 " nnoremap <leader>r :ReplaceTo<space>
 
 """""""tmz 2019/12/26"""""""
- " nerdtree 
+ " nerdtree
 " nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 " let g:NERDTreeFileExtensionHighlightFullName = 1
 " let g:NERDTreeExactMatchHighlightFullName = 1
 " let g:NERDTreePatternMatchHighlightFullName = 1
-" let g:NERDTreeHighlightFolders = 1         
-" let g:NERDTreeHighlightFoldersFullName = 1 
+" let g:NERDTreeHighlightFolders = 1
+" let g:NERDTreeHighlightFoldersFullName = 1
 " let g:NERDTreeDirArrowExpandable='▷'
 " let g:NERDTreeDirArrowCollapsible='▼'
 
@@ -440,7 +445,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 " 输入第 2 个字符开始补全
-let g:ycm_min_num_of_chars_for_completion=2 
+let g:ycm_min_num_of_chars_for_completion=2
 " 禁止缓存匹配项,每次都重新生成匹配项
 let g:ycm_cache_omnifunc=0
 "在注释输入中也能补全
@@ -482,12 +487,12 @@ let g:ycm_use_ultisnips_completer = 1
 " " YCM "TODO"
 " " 如果不指定python解释器路径，ycm会自己搜索一个合适的(与编译ycm时使用的python版本匹配)
 " " let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
-" let g:ycm_confirm_extra_conf = 0 
+" let g:ycm_confirm_extra_conf = 0
 " let g:ycm_error_symbol = '✗'
 " let g:ycm_warning_symbol = '✹'
-" let g:ycm_seed_identifiers_with_syntax = 1 
-" let g:ycm_complete_in_comments = 1 
-" let g:ycm_complete_in_strings = 1 
+" let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_complete_in_strings = 1
 " let g:ycm_collect_identifiers_from_tags_files = 1
 " let g:ycm_semantic_triggers =  {
 "             \   'c' : ['->', '.','re![_a-zA-z0-9]'],
@@ -504,7 +509,7 @@ let g:ycm_use_ultisnips_completer = 1
 "             \ }
 " nnoremap <leader>u :YcmCompleter GoToDeclaration<cr>
 " " 已经使用cpp-mode插件提供的转到函数实现的功能
-" " nnoremap <leader>i :YcmCompleter GoToDefinition<cr> 
+" " nnoremap <leader>i :YcmCompleter GoToDefinition<cr>
 " nnoremap <leader>o :YcmCompleter GoToInclude<cr>
 " nnoremap <leader>ff :YcmCompleter FixIt<cr>
 " nmap <F5> :YcmDiags<cr>
