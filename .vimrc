@@ -106,7 +106,7 @@ if has("gui_running")
     set guioptions-=L           " 隐藏左侧滚动条
     set guioptions-=r           " 隐藏右侧滚动条
     set guioptions-=b           " 隐藏底部滚动条
-    set showtabline=0           " 隐藏Tab栏
+    " set showtabline=0           " 隐藏Tab栏
     "set guicursor=n-v-c:ver5    " 设置光标为竖线
     set guicursor=n-v-c:block-Cursor/lCursor,i-ci-r-cr:ver25-Cursor/lCursor,a:blinkon0
 endif
@@ -163,6 +163,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+"Plug 'scrooloose/nerdcommenter'
 "高亮C++的部分关键字和标准库
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-airline/vim-airline'
@@ -306,8 +307,8 @@ let g:airline_symbols.branch = '⎇'
 
 " 是否打开tabline
 "打开后，tabline和tmuxline都可以得到增强
-let g:airline#extensions#tabline#enabled = 1 
-"let g:airline#enabled = 1 
+"let g:airline#extensions#tabline#enabled = 1 
+let g:airline#enabled = 1 
 
 " " airline
 " let g:airline_theme="onedark"
