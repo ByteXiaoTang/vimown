@@ -50,7 +50,7 @@ set sidescroll=10        " 设置向右滚动字符数
 set foldenable
 set foldmethod=syntax 
 set foldlevel=100
-set foldcolumn=5  
+set foldcolumn=4  
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码补全
