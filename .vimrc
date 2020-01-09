@@ -106,7 +106,7 @@ if has("gui_running")
     else
         set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 11      " 设置字体
     endif
-    "set guioptions-=m           " 隐藏菜单栏
+    set guioptions-=m           " 隐藏菜单栏
     set guioptions-=T           " 隐藏工具栏
     set guioptions-=L           " 隐藏左侧滚动条
     set guioptions-=r           " 隐藏右侧滚动条
@@ -257,8 +257,9 @@ nnoremap <leader>ge :edit /usr/share/vim/gvimrc<cr>
 nnoremap <leader>vc :edit ~/.vimrc.custom.config<cr>
 nnoremap <leader>vp :edit ~/.vimrc.custom.plugins<cr>
 
-" 查看vimplus的help文件
-nnoremap <leader>h :view +let\ &l:modifiable=0 ~/.vimplus/help.md<cr>
+" 查看vimplus的help文件 NOTE::Need change according path
+" nnoremap <leader>h :view +let\ &l:modifiable=0 ~/.vimplus/help.md<cr>
+nnoremap <leader>h :view +let\ &l:modifiable=0 /home/tbox/TMZ/GitHub/vimown/help.md<cr>
 
 " 打开当前光标所在单词的vim帮助文档
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
