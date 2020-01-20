@@ -1,10 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Author: Tmz <994052070@qq.com>
-" Repository: https://github.com/chxuan/vimplus "TODO"
-" Create Date: 2019-12-26
-" License: MIT
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 通用设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -355,9 +349,9 @@ let g:airline#enabled = 1
 "
 "
 
-nmap <F6> ms:call TitleDet() <cr>'s
+nmap <F6> ms:call TitleDet1() <cr>'s 
 "在文件中按F6调用
-function AddTitle()
+function AddTitle1()
     call append (0,"/*********************************************************************")
     call append (1," * Author           : tmz")
     call append (2," * Email            : 994052070@qq.com")
@@ -368,7 +362,7 @@ function AddTitle()
     echohl WarningMsg | echo "Adding coryright Successfully !!" | echohl None
 endfunction
 "在上面代码中添加自己的版权信息
-function UpdateTitle()
+function UpdateTitle1()
     normal m'
     execute '/* Last modified\s*:/s@:.*$@\=strftime(": %Y-%m-%d %H:%M")@'
     normal ''
@@ -378,17 +372,17 @@ function UpdateTitle()
     normal 'k
     echohl WarningMsg | echo "Updating coryright Successfully !!" | echohl None
 endfunction
-function TitleDet()
+function TitleDet1()
     let n=1
     while n<7
         let line = getline(n)
         if line =~ '^\s*\*\s*Last\smodified\s*:\s*\S*.*$'
-            call UpdateTitle()
+            call UpdateTitle1()
             return
         endif
         let n = n+1
     endwhile
-    call AddTitle()
+    call AddTitle1()
 endfunction
 
 
@@ -446,7 +440,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 " 输入第 2 个字符开始补全
-let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_min_num_of_chars_for_completion=5
 " 禁止缓存匹配项,每次都重新生成匹配项
 let g:ycm_cache_omnifunc=0
 "在注释输入中也能补全
@@ -469,12 +463,25 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog' : 1,
       \ 'mail' : 1
       \}
+" let g:ycm_semantic_triggers =  {
+"   \   'c' : ['->', '.', '::', 're![_a-zA-z0-9]'],
+"   \   'objc' : ['->', '.', '::', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+"   \             're!\[.*\]\s'],
+"   \   'ocaml' : ['.', '#'],
+"   \   'cpp,objcpp' : ['->', '.', '::', 're![_a-zA-Z0-9]'],
+"   \   'perl' : ['->'],
+"   \   'php' : ['->', '::'],
+"   \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+"   \   'ruby' : ['.', '::'],
+"   \   'lua' : ['.', ':'],
+"   \   'erlang' : [':'],
+"   \ }
 let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.', '::', 're![_a-zA-z0-9]'],
+  \   'c' : ['->', '.', '::'],
   \   'objc' : ['->', '.', '::', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
   \             're!\[.*\]\s'],
   \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::', 're![_a-zA-Z0-9]'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
   \   'perl' : ['->'],
   \   'php' : ['->', '::'],
   \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
