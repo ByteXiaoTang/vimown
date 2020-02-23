@@ -349,41 +349,41 @@ let g:airline#enabled = 1
 "
 "
 
-nmap <F6> ms:call TitleDet1() <cr>'s 
-"在文件中按F6调用
-function AddTitle1()
-    call append (0,"/*********************************************************************")
-    call append (1," * Author           : tmz")
-    call append (2," * Email            : 994052070@qq.com")
-    call append (3," * Last modified    : ".strftime("%Y-%m-%d %H:%M"))
-    call append (4," * Filename         : ".expand("%:t"))
-    call append (5," * Description      : ")
-    call append (6," * ******************************************************************/")
-    echohl WarningMsg | echo "Adding coryright Successfully !!" | echohl None
-endfunction
-"在上面代码中添加自己的版权信息
-function UpdateTitle1()
-    normal m'
-    execute '/* Last modified\s*:/s@:.*$@\=strftime(": %Y-%m-%d %H:%M")@'
-    normal ''
-    normal mk
-    execute '/* Filename\s*:/s@:.*$@\=": ".expand("%:t")@'
-    execute "noh"
-    normal 'k
-    echohl WarningMsg | echo "Updating coryright Successfully !!" | echohl None
-endfunction
-function TitleDet1()
-    let n=1
-    while n<7
-        let line = getline(n)
-        if line =~ '^\s*\*\s*Last\smodified\s*:\s*\S*.*$'
-            call UpdateTitle1()
-            return
-        endif
-        let n = n+1
-    endwhile
-    call AddTitle1()
-endfunction
+"nmap <F6> ms:call TitleDet1() <cr>'s 
+""在文件中按F6调用
+"function AddTitle1()
+"    call append (0,"/*********************************************************************")
+"    call append (1," * Author           : tmz")
+"    call append (2," * Email            : 994052070@qq.com")
+"    call append (3," * Last modified    : ".strftime("%Y-%m-%d %H:%M"))
+"    call append (4," * Filename         : ".expand("%:t"))
+"    call append (5," * Description      : ")
+"    call append (6," * ******************************************************************/")
+"    echohl WarningMsg | echo "Adding coryright Successfully !!" | echohl None
+"endfunction
+""在上面代码中添加自己的版权信息
+"function UpdateTitle1()
+"    normal m'
+"    execute '/* Last modified\s*:/s@:.*$@\=strftime(": %Y-%m-%d %H:%M")@'
+"    normal ''
+"    normal mk
+"    execute '/* Filename\s*:/s@:.*$@\=": ".expand("%:t")@'
+"    execute "noh"
+"    normal 'k
+"    echohl WarningMsg | echo "Updating coryright Successfully !!" | echohl None
+"endfunction
+"function TitleDet1()
+"    let n=1
+"    while n<7
+"        let line = getline(n)
+"        if line =~ '^\s*\*\s*Last\smodified\s*:\s*\S*.*$'
+"            call UpdateTitle1()
+"            return
+"        endif
+"        let n = n+1
+"    endwhile
+"    call AddTitle1()
+"endfunction
 
 
 
@@ -426,7 +426,7 @@ imap <F3> <ESC> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""0503 youcompleteme"""""""""""""""
 "寻找全局配置文件
-let g:ycm_global_ycm_extra_conf = '~/.vimplus/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/home/tbox/TMZ/vimown/.ycm_extra_conf.py'
 
 set completeopt=menu,menuone "关闭自动弹出的窗口
 let g:ycm_add_preview_to_completeopt = 0
@@ -477,11 +477,11 @@ let g:ycm_filetype_blacklist = {
 "   \   'erlang' : [':'],
 "   \ }
 let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.', '::'],
+  \   'c' : ['->', '.', '::', 're![_a-zA-Z0-9]'],
   \   'objc' : ['->', '.', '::', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
   \             're!\[.*\]\s'],
   \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'cpp,objcpp' : ['->', '.', '::', 're![_a-zA-Z0-9]'],
   \   'perl' : ['->'],
   \   'php' : ['->', '::'],
   \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
@@ -491,6 +491,9 @@ let g:ycm_semantic_triggers =  {
   \ }
 let g:ycm_cache_omnifunc = 1
 let g:ycm_use_ultisnips_completer = 1
+
+"add tmz
+set pumheight=10
 
 " " YCM "TODO"
 " " 如果不指定python解释器路径，ycm会自己搜索一个合适的(与编译ycm时使用的python版本匹配)
