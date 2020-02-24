@@ -426,7 +426,7 @@ imap <F3> <ESC> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""0503 youcompleteme"""""""""""""""
 "寻找全局配置文件
-let g:ycm_global_ycm_extra_conf = '~/home/tbox/TMZ/vimown/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/tbox/TMZ/GitHub/vimown/.ycm_extra_conf.py'
 
 set completeopt=menu,menuone "关闭自动弹出的窗口
 let g:ycm_add_preview_to_completeopt = 0
@@ -464,11 +464,11 @@ let g:ycm_filetype_blacklist = {
       \ 'mail' : 1
       \}
 " let g:ycm_semantic_triggers =  {
-"   \   'c' : ['->', '.', '::', 're![_a-zA-z0-9]'],
+"   \   'c' : ['->', '.'],
 "   \   'objc' : ['->', '.', '::', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
 "   \             're!\[.*\]\s'],
 "   \   'ocaml' : ['.', '#'],
-"   \   'cpp,objcpp' : ['->', '.', '::', 're![_a-zA-Z0-9]'],
+"   \   'cpp,objcpp' : ['->', '.', '::'],
 "   \   'perl' : ['->'],
 "   \   'php' : ['->', '::'],
 "   \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
@@ -590,6 +590,7 @@ let g:SuperTabRetainCompletionType=2
 nnoremap <leader>g :GV<cr>
 nnoremap <leader>G :GV!<cr>
 nnoremap <leader>gg :GV?<cr>
+
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
