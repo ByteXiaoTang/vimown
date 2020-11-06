@@ -27,6 +27,8 @@ An automatic configuration program for vim
     cd ~/.vimplus
     ./install.sh //不加sudo
     
+    记得及时安装sudo apt-get install global 以便于全局搜索
+    
 #### 设置Nerd Font
 
 为防止vimplus显示乱码，需设置linux终端字体为`Droid Sans Mono Nerd Font`。   
@@ -95,7 +97,8 @@ An automatic configuration program for vim
 
 - **`vimplus用起来真的太棒了，怎么办？`**
 
-    那就麻烦您打赏一颗:star::star:吧，给予我继续维护的动力。
+    那就麻烦您打赏一颗:star::star:吧，给予我继续维护的动力
+ 
 
 
 ## 代码贡献者
