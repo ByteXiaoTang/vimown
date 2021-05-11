@@ -13,6 +13,11 @@ An automatic configuration program for vim
     
 #### 设置Nerd Font
 
+为防止vimplus显示乱码，需设置mac终端字体为`Droid Sans Mono Nerd Font
+
+#### use tags
+sudo apt-get install global
+
 为防止vimplus显示乱码，需设置mac终端字体为`Droid Sans Mono Nerd Font`。
 
 #### 更新vimplus
